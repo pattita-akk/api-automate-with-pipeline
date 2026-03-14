@@ -181,8 +181,8 @@ pipeline {
 
 After each pipeline run, the **Playwright HTML Report** is available in Jenkins under the **"Playwright Report"** link in the build sidebar.
 
-### Example 
-![alt text](https://github.com/pattita-akk/api-automate-with-pipeline/blob/main/Screenshot 2569-03-14 at 19.05.56.png?raw=true)
+Example 
+#+HTML: <img src="[./assets/main.jpeg](https://github.com/pattita-akk/api-automate-with-pipeline/blob/main/jenkins_example_report.png)">
 
 ---
 
