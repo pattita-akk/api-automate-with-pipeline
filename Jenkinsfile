@@ -26,14 +26,16 @@ pipeline {
             steps {
                 echo '🎭 Running Playwright API tests...'
                 sh '''
+                    mkdir -p ${WORKSPACE}/playwright-report
+                    mkdir -p ${WORKSPACE}/test-results
                     docker run --rm \
-                        --name ${CONTAINER_NAME}-${BUILD_NUMBER} \
-                        -v ${WORKSPACE}/test-results:/app/test-results \
-                        -v ${WORKSPACE}/playwright-report:/app/playwright-report \
-                        ${IMAGE_NAME}:${BUILD_NUMBER}
+                    --name ${CONTAINER_NAME}-${BUILD_NUMBER} \
+                    -v ${WORKSPACE}/test-results:/app/test-results \
+                    -v ${WORKSPACE}/playwright-report:/app/playwright-report \
+                    ${IMAGE_NAME}:${BUILD_NUMBER}
                 '''
-            }
         }
+}
         
         stage('Publish Report') {
             steps {
