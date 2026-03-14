@@ -37,8 +37,7 @@ pipeline {
                         ${IMAGE_NAME}:${BUILD_NUMBER}
                 '''
             }
-}
-}
+        }
         
         stage('Publish Report') {
             steps {
